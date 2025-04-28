@@ -8,7 +8,7 @@ const DesktopMenu = ({ activeLink, setActiveLink }) => {
         <a
           key={link.name}
           href={link.path}
-          className={`text-gray-800 hover:text-gray-900 transition-colors ${
+          className={`text-lg text-gray-800 hover:text-gray-900 transition-colors ${
             activeLink === link.name
               ? "text-black border-b-2 border-blue-600 font-semibold"
               : "text-gray-700 hover:text-gray-200 transition-colors"
