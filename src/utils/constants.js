@@ -74,3 +74,23 @@ export const socialIcons = [
   { name: "LinkedIn", icon: FaLinkedin, link: "#" },
   { name: "Youtube", icon: FaYoutube, link: "#" },
 ];
+
+export const sampleResults = [
+  {
+    title: "Welcome To CodeEaseX",
+    description: "",
+    source: "MERN-LAUNCHER",
+  },
+  {
+    title: "Powered By CodeEaseX 🚀",
+    description:
+      "Setting up a full-stack project from scratch can be time-consuming...",
+    source: "MERN-LAUNCHER",
+  },
+  {
+    title: "Powered By CodeEaseX 🚀",
+    description:
+      "Every web developer knows this pain—you’re excited to build...",
+    source: "MERN-LAUNCHER",
+  },
+];

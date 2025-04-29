@@ -22,7 +22,7 @@ const DropdownItem = ({ item, rootName, activeLink, setActiveLink }) => {
 
       {item.subItems && (
         <div
-          className={`absolute left-full -top-2 w-56 bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-50 border-l border-gray-400 ${
+          className={`absolute left-full -top-2 w-56 bg-white shadow-lg ring-1 ring-gray-400 ring-opacity-5 z-50 ${
             hovered ? "opacity-100 visible" : "opacity-0 invisible"
           } transition-all duration-200`}
         >
@@ -64,7 +64,7 @@ const DesktopMenu = ({ activeLink, setActiveLink }) => {
           </a>
 
           {link.subItems && (
-            <div className="absolute left-0 top-full w-56 bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border-r border-gray-400">
+            <div className="absolute left-0 top-full w-56 bg-white shadow-lg ring-1 ring-gray-400 ring-opacity-5 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border-r border-gray-400">
               <div className="py-2">
                 {link.subItems.map((item) => (
                   <DropdownItem
