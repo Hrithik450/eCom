@@ -8,7 +8,6 @@ import Logo from "../logo";
 const MobileMenu = ({ activeLink, setActiveLink }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [menuStack, setMenuStack] = useState([navLinks]);
-  const currentMenu = menuStack[menuStack.length - 1];
 
   const handleItemClick = (item) => {
     if (item.subItems) {
@@ -80,22 +79,38 @@ const MobileMenu = ({ activeLink, setActiveLink }) => {
               </button>
             </div>
 
-            <nav className="flex-1 space-y-2 overflow-y-auto">
-              {currentMenu.map((item) => (
-                <div
-                  key={item.name}
-                  className={`flex justify-between items-center px-4 py-3 text-lg cursor-pointer ${
-                    activeLink === item.name
-                      ? "text-black font-semibold"
-                      : "text-gray-700"
-                  } hover:bg-gray-100`}
-                  onClick={() => handleItemClick(item)}
-                >
-                  <span>{item.name}</span>
-                  {item.subItems && <ChevronRight className="w-5 h-5" />}
-                </div>
-              ))}
-            </nav>
+            <div className="relative flex-1 overflow-hidden">
+              <div
+                className="absolute inset-0 w-full h-full transition-transform duration-300 ease-in-out"
+                style={{
+                  transform: `translateX(-${(menuStack.length - 1) * 100}%)`,
+                  display: "flex",
+                  flexDirection: "row",
+                }}
+              >
+                {menuStack.map((menu, index) => (
+                  <nav
+                    key={index}
+                    className="w-full shrink-0 space-y-2 overflow-y-auto px-4 py-3 bg-white"
+                  >
+                    {menu.map((item) => (
+                      <div
+                        key={item.name}
+                        className={`flex justify-between items-center py-3 text-lg cursor-pointer ${
+                          activeLink === item.name
+                            ? "text-black font-semibold"
+                            : "text-gray-700"
+                        } hover:bg-gray-100`}
+                        onClick={() => handleItemClick(item)}
+                      >
+                        <span>{item.name}</span>
+                        {item.subItems && <ChevronRight className="w-5 h-5" />}
+                      </div>
+                    ))}
+                  </nav>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

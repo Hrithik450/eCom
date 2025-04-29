@@ -249,7 +249,7 @@ const ProductSection = () => {
           </div>
         </div>
 
-        <div className="relative overflow-x-auto px-2 sm:px-0">
+        <div className="relative overflow-x-auto px-2">
           <Swiper
             modules={[Navigation]}
             navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
