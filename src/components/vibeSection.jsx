@@ -14,13 +14,13 @@ const VibeSection = () => {
 
         {/* Repeating Harmony with fading sides */}
         <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
-          <span className="text-red-400 opacity-60 text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black">
+          <span className="text-red-400 opacity-60 text-xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black">
             Harmony
           </span>
-          <span className="text-red-500 text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black">
+          <span className="text-red-500 text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black">
             Harmony
           </span>
-          <span className="text-red-400 opacity-60 text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-8xl font-black">
+          <span className="text-red-400 opacity-60 text-xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-8xl font-black">
             Harmony
           </span>
         </div>

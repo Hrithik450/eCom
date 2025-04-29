@@ -5,15 +5,21 @@ const HeadphoneSection = () => {
     <div className="relative w-full bg-white overflow-hidden">
       {/* Text Layer */}
       <div className="flex items-center justify-center px-4 sm:px-6 text-center py-20 sm:py-32 md:py-50 lg:py-60">
-        <h1 className="xl:max-w-[85%] text-2xl xs:text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-snug sm:leading-tight text-black/80">
-          From pioneering wireless audio to <br className="hidden xs:block" />
-          designing <span className="text-black">state-of-the-art</span>{" "}
-          <span className="text-gray-300">speakers,</span>{" "}
-          <br className="hidden sm:block" />
-          <span className="italic font-medium text-black">Sonos'</span>{" "}
-          <span className="text-gray-300">commitment to innovation</span>{" "}
-          <br className="hidden md:block" />
-          that <span className="text-gray-300">continually inspires.</span>
+        <h1 className="text-xl xs:text-3xl sm:text-4xl lg:text-6xl xl:text-6xl font-bold leading-snug sm:leading-tight text-black/80">
+          <p>
+            From pioneering wireless audio to <br className="hidden xs:block" />
+          </p>
+          <p>
+            designing state-of-the-art{" "}
+            <span className="text-gray-300">speakers,</span>{" "}
+          </p>
+
+          <p>
+            Sonos'{" "}
+            <span className="text-gray-300">commitment to innovation</span>
+          </p>
+
+          <p className="text-gray-300">that continually inspires. </p>
         </h1>
       </div>
 
