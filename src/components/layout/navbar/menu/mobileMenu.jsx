@@ -31,7 +31,7 @@ const MobileMenu = ({ activeLink, setActiveLink }) => {
 
   return (
     <>
-      <div className="cursor-pointer md:hidden flex items-center space-x-4">
+      <div className="cursor-pointer lg:hidden flex items-center space-x-4">
         <SearchAction />
         <CartAction />
         <button
@@ -45,7 +45,7 @@ const MobileMenu = ({ activeLink, setActiveLink }) => {
       <div
         className={`fixed inset-0 z-50 transform ${
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out md:hidden`}
+        } transition-transform duration-300 ease-in-out lg:hidden`}
       >
         <div className="relative w-full max-w-sm h-full bg-white shadow-xl">
           <div className="flex flex-col h-full p-6">

@@ -45,7 +45,7 @@ const DropdownItem = ({ item, rootName, activeLink, setActiveLink }) => {
 
 const DesktopMenu = ({ activeLink, setActiveLink }) => {
   return (
-    <div className="hidden md:flex items-center space-x-6">
+    <div className="hidden lg:flex items-center space-x-6">
       {navLinks.map((link) => (
         <div key={link.name} className="relative group">
           <a

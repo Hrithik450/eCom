@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <Logo />
           <DesktopMenu activeLink={activeLink} setActiveLink={setActiveLink} />
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <SearchAction />
             <CartAction />
           </div>
