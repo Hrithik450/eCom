@@ -47,10 +47,8 @@ const OfferSection = () => {
               href="#"
               className="inline-flex items-center gap-1 sm:gap-2 bg-white text-black font-medium sm:font-semibold text-sm sm:text-md py-2 px-4 sm:py-3 sm:px-6 rounded-full hover:bg-gray-100 transition"
             >
-              Check Offers
-              <span className="w-4 h-4 sm:w-5 sm:h-5">
-                <MoveRight />
-              </span>
+              <span>Check Offers</span>
+              <MoveRight className="ml-1 w-4 h-4" />
             </a>
           </div>
         </div>

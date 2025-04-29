@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { navLinks } from "../../../../utils/constants";
-import { ChevronRight, Menu } from "lucide-react";
+import { ArrowLeft, ChevronRight, Menu } from "lucide-react";
 import SearchAction from "../actions/searchAction";
 import CartAction from "../actions/cartAction";
 import Logo from "../logo";
@@ -53,9 +53,10 @@ const MobileMenu = ({ activeLink, setActiveLink }) => {
               {menuStack.length > 1 ? (
                 <button
                   onClick={handleBack}
-                  className="text-gray-700 p-2 hover:bg-gray-100 rounded-full"
+                  className="text-gray-700 p-2 hover:bg-gray-100 rounded-full flex items-center justify-between"
                 >
-                  ← Back
+                  <ArrowLeft className="mr-1 h-4 w-4" />
+                  <span>Back</span>
                 </button>
               ) : (
                 <div
