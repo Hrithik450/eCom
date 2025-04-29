@@ -22,7 +22,7 @@ const SearchModal = ({ isOpen, onClose }) => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white w-full mx-4 sm:mx-6 md:w-[90%] lg:w-full max-w-2xl rounded-lg sm:rounded-xl shadow-lg border"
+        className="bg-white w-full mx-4 sm:mx-6 md:w-[90%] lg:w-full max-w-2xl rounded-lg sm:rounded-xl shadow-lg border border-gray-400"
       >
         <div className="p-3 sm:p-4 flex items-center">
           <Search className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 mr-2" />
