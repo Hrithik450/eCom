@@ -1,12 +1,33 @@
 import React, { useState } from "react";
 import { navLinks } from "../../../../utils/constants";
-import { Menu } from "lucide-react";
+import { ChevronRight, Menu } from "lucide-react";
 import SearchAction from "../actions/searchAction";
 import CartAction from "../actions/cartAction";
 import Logo from "../logo";
 
 const MobileMenu = ({ activeLink, setActiveLink }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuStack, setMenuStack] = useState([navLinks]);
+  const currentMenu = menuStack[menuStack.length - 1];
+
+  const handleItemClick = (item) => {
+    if (item.subItems) {
+      setMenuStack((prev) => [...prev, item.subItems]);
+    } else {
+      const rootItem = menuStack[0].find((root) =>
+        JSON.stringify(root).includes(item.name)
+      );
+      setActiveLink(rootItem?.name || item.name);
+      setMobileMenuOpen(false);
+      setMenuStack([navLinks]);
+    }
+  };
+
+  const handleBack = () => {
+    if (menuStack.length > 1) {
+      setMenuStack((prev) => prev.slice(0, -1));
+    }
+  };
 
   return (
     <>
@@ -14,11 +35,8 @@ const MobileMenu = ({ activeLink, setActiveLink }) => {
         <SearchAction />
         <CartAction />
         <button
-          variant="ghost"
-          size="icon"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className=" bg-black text-gray-300 hover:text-white p-1 px-4 rounded-xl"
-          aria-label="Toggle Mobile Menu"
+          onClick={() => setMobileMenuOpen(true)}
+          className="bg-black text-gray-300 hover:text-white p-1 px-4 rounded-xl"
         >
           <Menu className="h-6 w-6" />
         </button>
@@ -31,55 +49,50 @@ const MobileMenu = ({ activeLink, setActiveLink }) => {
       >
         <div className="relative w-full max-w-sm h-full bg-white shadow-xl">
           <div className="flex flex-col h-full p-6">
-            {/* Top Layer */}
-            <div className="flex items-center justify-between mb-8">
-              <div
-                onClick={() => {
-                  setActiveLink("Home");
-                  setMobileMenuOpen(false);
-                }}
-              >
-                <Logo />
-              </div>
-
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 p-2 hover:bg-gray-100 rounded-full"
-              >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+            <div className="flex items-center justify-between mb-6">
+              {menuStack.length > 1 ? (
+                <button
+                  onClick={handleBack}
+                  className="text-gray-700 p-2 hover:bg-gray-100 rounded-full"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            {/* Navigations Layer */}
-            <nav className="flex-1 space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.path}
-                  className={`block px-4 py-3 text-xl rounded-lg ${
-                    activeLink === link.name
-                      ? "bg-gray-100 text-gray-900 font-semibold"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  } transition-colors duration-200`}
+                  ← Back
+                </button>
+              ) : (
+                <div
                   onClick={() => {
-                    setActiveLink(link.name);
+                    setActiveLink("Home");
                     setMobileMenuOpen(false);
                   }}
                 >
-                  {link.name}
-                </a>
+                  <Logo />
+                </div>
+              )}
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setMenuStack([navLinks]);
+                }}
+                className="text-gray-700 p-2 hover:bg-gray-100 rounded-full"
+              >
+                ✕
+              </button>
+            </div>
+
+            <nav className="flex-1 space-y-2 overflow-y-auto">
+              {currentMenu.map((item) => (
+                <div
+                  key={item.name}
+                  className={`flex justify-between items-center px-4 py-3 text-lg cursor-pointer ${
+                    activeLink === item.name
+                      ? "text-black font-semibold"
+                      : "text-gray-700"
+                  } hover:bg-gray-100`}
+                  onClick={() => handleItemClick(item)}
+                >
+                  <span>{item.name}</span>
+                  {item.subItems && <ChevronRight className="w-5 h-5" />}
+                </div>
               ))}
             </nav>
           </div>

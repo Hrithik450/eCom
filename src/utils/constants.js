@@ -5,11 +5,66 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
 
 export const navLinks = [
-  { name: "Products", path: "#products" },
-  { name: "Technology", path: "#technology" },
+  {
+    name: "Products",
+    path: "#products",
+    subItems: [
+      {
+        name: "Electronics",
+        path: "#electronics",
+        subItems: [
+          {
+            name: "Phones",
+            path: "#phones",
+            subItems: [
+              {
+                name: "Android",
+                path: "#android",
+                subItems: [
+                  {
+                    name: "Samsung",
+                    path: "#samsung",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Technology",
+    path: "#technology",
+    subItems: [
+      {
+        name: "Our Tech",
+        path: "#ourTech",
+        subItems: [
+          { name: "Platform", path: "#platform" },
+          { name: "AI Features", path: "#ai" },
+          { name: "Security", path: "#security" },
+        ],
+      },
+    ],
+  },
   { name: "Learn", path: "#learn" },
   { name: "Support", path: "#support" },
-  { name: "About Us", path: "#about" },
+  {
+    name: "About Us",
+    path: "#about",
+    subItems: [
+      {
+        name: "company",
+        path: "#company",
+        subItems: [
+          { name: "Our Story", path: "#story" },
+          { name: "Team", path: "#team" },
+          { name: "Careers", path: "#careers" },
+        ],
+      },
+    ],
+  },
 ];
 
 export const socialIcons = [
