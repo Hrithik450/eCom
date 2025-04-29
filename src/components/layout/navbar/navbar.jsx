@@ -16,7 +16,7 @@ const Navbar = () => {
             <Logo className="h-8 sm:h-10" />
           </div>
 
-          <div className="flex-3 flex justify-center">
+          <div className="flex-4 flex justify-center">
             <DesktopMenu
               activeLink={activeLink}
               setActiveLink={setActiveLink}

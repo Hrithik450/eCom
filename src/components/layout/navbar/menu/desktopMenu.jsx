@@ -54,7 +54,7 @@ const DesktopMenu = ({ activeLink, setActiveLink }) => {
               activeLink === link.name
                 ? "text-black border-b-2 border-blue-600 font-semibold"
                 : "text-gray-700 hover:text-gray-200 transition-colors"
-            } px-1 py-2 duration-200 flex justify-baseline items-center`}
+            } px-0.5 py-2 duration-200 flex justify-baseline items-center`}
             onClick={() => {
               setActiveLink(link.name);
             }}

@@ -5,7 +5,7 @@ import { Minimize2, Search } from "lucide-react";
 const SearchButton = () => {
   return (
     <button className="cursor-pointer text-gray-700 hover:text-gray-900 transition-colors">
-      <Search className="h-5 w-5" />
+      <Search className="h-4 w-4" />
     </button>
   );
 };
@@ -100,19 +100,14 @@ const SearchAction = () => {
       </div>
 
       <div
-        className="hidden sm:flex items-center border border-gray-300 sm:border-gray-500 rounded-full px-2 py-1 sm:px-3 sm:py-1.5 shadow-sm bg-white focus-within:ring-1 focus-within:ring-blue-500 hover:border-gray-400 transition-colors cursor-pointer"
+        className="hidden sm:flex items-center border border-gray-300 sm:border-gray-500 rounded-full px-4 py-1 sm:px-3 sm:py-1.5 shadow-sm bg-white focus-within:ring-1 focus-within:ring-blue-500 hover:border-gray-400 transition-colors cursor-pointer"
         onClick={() => setIsModalOpen(true)}
       >
         <SearchButton />
         <div className="flex items-center space-x-2 sm:space-x-4 ml-2">
           <span className="text-xs sm:text-sm text-gray-700 whitespace-nowrap">
-            Search…
+            Search...
           </span>
-
-          <div className="flex items-center space-x-0.5 px-1 py-0.5 border rounded bg-gray-100 text-xs text-gray-600">
-            <kbd className="font-mono">Ctrl</kbd>
-            <kbd className="font-mono">K</kbd>
-          </div>
         </div>
       </div>
 
