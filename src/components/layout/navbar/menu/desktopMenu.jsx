@@ -22,7 +22,7 @@ const DropdownItem = ({ item, rootName, activeLink, setActiveLink }) => {
 
       {item.subItems && (
         <div
-          className={`absolute left-full -top-2 w-56 bg-white shadow-lg ring-1 ring-gray-400 ring-opacity-5 z-50 ${
+          className={`absolute left-full -top-2 min-w-56 w-[max-content] bg-white shadow-lg ring-1 ring-gray-400 ring-opacity-5 z-50 ${
             hovered ? "opacity-100 visible" : "opacity-0 invisible"
           } transition-all duration-200`}
         >
